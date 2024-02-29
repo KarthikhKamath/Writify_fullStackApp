@@ -58,7 +58,7 @@ function Navbar() {
     }
 
     return (
-        <AppBar sx={{ p: "0 10%", backgroundColor: "#000" }}>
+        <AppBar sx={{ p: "0 10%", backgroundColor: "darkBlue" }}>
             <Toolbar sx={{ justifyContent: "space-between" }}>
                 <Link style={{ color: "#fff", textDecoration: "none" }} to={"/"}>Writify</Link>
                 {/* <h4>Writify</h4> */}

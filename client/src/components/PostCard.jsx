@@ -1,49 +1,43 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import Action from './Action';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
-import { useContext } from 'react';
+import "./Postcard.css";
+import Action from './Action';
 import { AuthContext } from '../App';
-
-export default function PostCard(props) {
+const PostCard = (props) => {
     const { user, _id, title, content, image, createdOn } = props.post;
-    const {auth} = useContext(AuthContext)
-
-    // Ensure user is defined before using slice
-    const avatarContent = user.name[0].toUpperCase()
+    const avatarContent = user.name.split(' ')[0].toLowerCase();
+    const { auth } = useContext(AuthContext);
 
     return (
-        <Card sx={{ width: "100%", boxShadow: "0px 10px 15px 3px rgba(0, 0, 0, 0.1)", borderRadius: "20px" }} id={_id}>
-            <CardHeader
-                avatar={
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                        {avatarContent}
-                    </Avatar>
-                }
-                action={
-                    
-                   auth?._id===user._id && <Action id={_id} />
-                }
-                title={title}
-                subheader={moment(createdOn).fromNow()}
-            />
-            <CardMedia
-                component="img"
-                height="100%"
-                image={image}
-                alt={user}
-            />
-            <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                   {user.name} : {content}
-                </Typography>
-            </CardContent>
-        </Card>
+        <div className="post-card">
+            <div className="post-image">
+                <img src={image} alt={user} />
+            </div>
+            <div className="post-content">
+                <div className="post-header">
+                    <div className="post-info">
+                    <div className="top">
+                        <h3 className='post title'>{title.length > 40 ? `${title.slice(0, 40)}...` : title}</h3>
+                    {auth?._id === user._id && <Action id={_id} />}
+                        </div>
+                        <div className='horizontal'>
+                            <p className='post date'>{moment(createdOn).fromNow()}</p>
+                            <p className='post avatarContent'>By : {avatarContent}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="post-body">
+                    <p>
+                        <strong>{user.name}</strong>: {content.length > 50 ? `${content.slice(0, 50)}...` : content}
+                    </p>
+                    <Link to={`/api/blog/${_id}`} className="read-more-link">
+                        Read more
+                    </Link>
+                </div>
+            </div>
+        </div>
     );
-}
+};
+
+export default PostCard;

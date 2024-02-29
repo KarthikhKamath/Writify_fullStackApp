@@ -44,7 +44,7 @@ function CreatePost() {
     }, [write]);
 
     return (
-        <Card sx={{ mt: 2, maxWidth: "500px", margin: " auto", padding: 4, display: "flex", flexDirection: "column", gap: 4 }} elevation={3}>
+        <Card sx={{ mt: 2, maxWidth: "500px", margin: " auto", padding: 4, display: "flex", flexDirection: "column", gap: 4, boxShadow: "0px 10px 15px 3px rgba(0, 0, 0, 0.1)" }} elevation={3}>
             <CardContent sx={{}}>
                 <Typography gutterBottom variant="h4" component="div" sx={{ fontFamily: "poppins", justifyContent: "center", textAlign: "center" }}>
                     Write a blog
@@ -54,7 +54,7 @@ function CreatePost() {
             <TextField id="outlined-basic" label="Paste an image url from google" variant="outlined" type='text' required name="image" onChange={handleChange} value={write.image} />
             <TextField id="outlined-basic" label="Content" variant="outlined" type='text' required name="content" rows={5} multiline onChange={handleChange} value={write.content} />
             <Button variant='contained' sx={{
-                backgroundColor: "#000", '&:hover': {
+                backgroundColor: "darkBlue", '&:hover': {
                     backgroundColor: '#202120',
                 },
             }} onClick={handleSubmit}>Post</Button>

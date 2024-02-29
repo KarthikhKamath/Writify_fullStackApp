@@ -52,7 +52,7 @@ function UpdatePost() {
 }
 
     return (
-        <Card sx={{ mt: 2, maxWidth: "500px", margin: " auto", padding: 4, display: "flex", flexDirection: "column", gap: 4 }} elevation={3}>
+        <Card sx={{ mt: 2, maxWidth: "500px", margin: " auto", padding: 4, display: "flex", flexDirection: "column", gap: 4, boxShadow: "0px 10px 15px 3px rgba(0, 0, 0, 0.1)" }} elevation={3}>
             <CardContent sx={{}}>
                 <Typography gutterBottom variant="h4" component="div" sx={{ fontFamily: "poppins", justifyContent: "center", textAlign: "center" }}>
                     Update a blog

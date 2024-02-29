@@ -38,7 +38,8 @@ function Login() {
         }
     }
     return (
-        <Card sx={{ mt: 4, maxWidth: "500px", margin: "50px auto", padding: 4, display: "flex", flexDirection: "column", gap: 4 }} elevation={3}>
+        <Card sx={{
+            mt: 4, maxWidth: "500px", margin: "50px auto", padding: 4, display: "flex", flexDirection: "column", gap: 4, boxShadow: "0px 10px 15px 3px rgba(0, 0, 0, 0.1)" }} elevation={3}>
             <CardContent sx={{}}>
                 <Typography gutterBottom variant="h4" component="div" sx={{ fontFamily: "poppins", justifyContent: "center", textAlign: "center" }}>
                     Login
@@ -47,7 +48,7 @@ function Login() {
             <TextField id="outlined-basic" label="Email" variant="outlined" type='email' required name="email" onChange={handleChange} value={user.email}/>
             <TextField id="outlined-basic" label="Password" variant="outlined" type='password' required name="password" onChange={handleChange} value={user.password} />
             <Button sx={{
-                backgroundColor: "#000", '&:hover': {
+                backgroundColor: "darkBlue", '&:hover': {
                     backgroundColor: '#202120',
                 },
             }}type='submit' variant='contained' onClick={handleSubmit}>Login</Button>

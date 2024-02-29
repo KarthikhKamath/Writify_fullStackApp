@@ -7,6 +7,7 @@ import { Container } from '@mui/material'
 import Register from './Pages/Register'
 import CreatePost from './Pages/CreatePost'
 import UpdatePost from './Pages/UpdatePost'
+import BlogPage from './Pages/BlogPage'
 export const AuthContext = createContext()
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/create' element={<CreatePost/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/update/:id' element={<UpdatePost/>}/>
+        <Route path='/api/blog/:id' element={<BlogPage/>}/>
       </Routes>
       </Container>
     </BrowserRouter>

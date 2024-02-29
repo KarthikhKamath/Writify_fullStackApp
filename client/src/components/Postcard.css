@@ -1,0 +1,88 @@
+.post-card {
+  display: flex;
+  flex-wrap: wrap; /* Allow text to wrap around image on small screens */
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 10px 10px 22px -3px rgba(0,0,0,0.1);
+  width: 100%;
+}
+.post-image {
+  flex: 0 0 50%; /* Set image width to 30% */
+  padding: 10px;
+  display: flex; /* Allow vertical centering */
+  justify-content: center; /* Horizontally center image */
+  align-items: center; /* Vertically center image */
+}
+.post-image img {
+  width: 100%;
+  height: auto;
+}
+.post-content {
+  flex: 1 1 50%; /* Set content area to 70% */
+  padding: 10px;
+}
+
+
+.post-header {
+  display: flex; /* Already present */
+  /* Add flexbox properties for alignment */
+  align-items: center; /* Vertically centers avatar and post info */
+  justify-content: space-between; /* Horizontally spaces content evenly */
+}
+.avatar {
+  background-color: #ccc;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-info {
+  flex: 1;
+}
+
+.post-info h3 {
+  margin-bottom: 5px;
+}
+.post{
+    margin: 5px 0;
+}
+.avatarContent{
+    color: grey;
+}
+.date{
+    color: grey;
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+}
+.horizontal p {
+  line-height: 1.5;
+  margin: 0;
+}
+.read-more-link{
+  color: grey;
+}
+@media screen and (min-width: 1px) {
+  .post-card {
+    flex-direction: column; /* Stack content on top of image for small screens */
+  }
+
+  .post-image {
+    order: -1; /* Move image above the content on small screens */
+    width: 100%;
+    margin: auto;
+  }
+  .title{
+    margin: auto;
+  }
+  .post-content {
+    text-align: center; /* Center-align text in mobile view */
+  }
+  .top{
+    flex-direction: column;
+  }
+}

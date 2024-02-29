@@ -43,15 +43,12 @@ function DisplayPost() {
         <Box
             sx={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
+                flexWrap:"wrap",
+                justifyContent:"center",
                 margin: "auto",
                 gap: 3,
-                alignItems:"center"
-                // '@media (min-width: 600px)': {
-                //     // flexDirection: "row",
-                //     // flexWrap: "wrap",
-                //     justifyContent: "center",
-                // },
+                alignItems:"center",
             }}
         >
             {posts.map(post => (
