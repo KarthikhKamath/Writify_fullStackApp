@@ -10,11 +10,14 @@
 
 ![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/2d43a89f-b540-4c9a-a298-41c4295df726)
 
-![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/f4ab267b-d079-4653-8942-75963ec5f524)
+![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/c5a31c20-c380-4876-aa19-b0fb39742ed0)
 
-![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/297f9c77-7f3f-44b0-8748-ebb895653464)
+![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/e646ad64-e5f2-49e8-8dba-5185601c8be5)
 
-![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/fb280064-9b55-460a-aacd-bb0db892d9e0)
+![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/7da7ff8c-b6bd-4c60-a9f9-103f38b3d55d)
+
+![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/f3ef1f34-8b12-4ece-b758-a56f4da02561)
+
 
 
 
