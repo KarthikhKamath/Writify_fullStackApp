@@ -1,4 +1,6 @@
-# Writify_fullStackApp
+# Writify-fullStackApp
+
+Live link : https://kartblogs.netlify.app/
 
 • Engineered a dynamic Full Stack Blogging platform leveraging React.js, including the integration of Material-UI components for responsive client-side rendering. Utilized Express.js to construct a robust server architecture.
 
