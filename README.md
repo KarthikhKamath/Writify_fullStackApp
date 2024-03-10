@@ -6,7 +6,7 @@
 
 • Implemented JWT authentication for secure user access and incorporated RESTful APIs, including the integration of Material-UI components, to enable effective communication between the client and server components.
 
-![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/014a34fa-d274-434c-9188-4c2f9e8e5dab)
+![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/d64dfb96-4d1e-44c6-b8d6-29876e65509b)
 
 ![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/f4ab267b-d079-4653-8942-75963ec5f524)
 
