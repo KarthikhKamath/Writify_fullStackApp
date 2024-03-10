@@ -12,12 +12,9 @@
 
 ![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/c5a31c20-c380-4876-aa19-b0fb39742ed0)
 
+![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/f3ef1f34-8b12-4ece-b758-a56f4da02561)
+
 ![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/e646ad64-e5f2-49e8-8dba-5185601c8be5)
 
 ![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/7da7ff8c-b6bd-4c60-a9f9-103f38b3d55d)
-
-![image](https://github.com/KarthikhKamath/Writify_fullStackApp/assets/74257697/f3ef1f34-8b12-4ece-b758-a56f4da02561)
-
-
-
 
