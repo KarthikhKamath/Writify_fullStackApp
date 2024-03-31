@@ -34,23 +34,31 @@ UserRouter.post("/register",async (req, res)=>{
     }
    
 })
-UserRouter.post("/login", async (req,res)=>{
-    try{
-        console.log(req.body)
-        const {email, password} = req.body
-        const userExists = await User.findOne({email})
-        const comparePassword = await bcrypt.compare(password, userExists.password)
-        if(!comparePassword){
-             res.status(400).json({msg:"Wrong Credentials"})
+UserRouter.post("/login", async (req, res) => {
+    try {
+        console.log(req.body);
+        const { email, password } = req.body;
+
+        const userExists = await User.findOne({ email });
+
+        if (!userExists) {
+            return res.status(400).json({ msg: "User not found" });
         }
-        const token = jwt.sign({id:userExists._id}, "Karthik")
-        res.status(201).json({msg:"User logged in", token:token})
+
+        const comparePassword = await bcrypt.compare(password, userExists.password);
+
+        if (!comparePassword) {
+            return res.status(400).json({ msg: "Wrong Credentials" });
+        }
+
+        const token = jwt.sign({ id: userExists._id }, "Karthik");
+        res.status(201).json({ msg: "User logged in", token: token });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Internal Server Error" });
     }
-    catch(err){
-        console.log(err)
-         res.status(400).json({error:err})
-    }
-})
+});
+
 UserRouter.get("/auth", getAuth, async (req, res) => {
     if (req.authError) {
         res.status(401).json({ error: req.authError });

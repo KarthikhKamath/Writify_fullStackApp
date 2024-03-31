@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import moment from 'moment';
-import { useParams } from 'react-router-dom'; 
+import { useParams } from 'react-router-dom';
 import "./BlogPage.css";
 import Action from "../components/Action";
 import { AuthContext } from '../App';
@@ -13,7 +13,7 @@ const BlogPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://mern-stack-blogger.onrender.com/api/blog/${id}`);
+                const response = await fetch(`https://vercel-backend-writify.vercel.app/api/blog/${id}`);
                 const data = await response.json();
                 setPost(data);
             } catch (error) {
@@ -25,7 +25,7 @@ const BlogPage = () => {
     }, [id]);
 
     if (!post) {
-        return <div>Loading...</div>;
+        return <div style={{ display: "flex", justifyContent: "center" }}>Loading...</div>;
     }
 
     const { user, title, content, image, createdOn } = post;
@@ -42,7 +42,7 @@ const BlogPage = () => {
                 <img src={image} alt={user.name} />
             </div>
             <div className="blog-content">
-                <p className='content-blog'>{content}</p>
+                <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
         </div>
     );

@@ -4,10 +4,20 @@ import moment from 'moment';
 import "./Postcard.css";
 import Action from './Action';
 import { AuthContext } from '../App';
+
 const PostCard = (props) => {
     const { user, _id, title, content, image, createdOn } = props.post;
-    const avatarContent = user.name.split(' ')[0].toLowerCase();
     const { auth } = useContext(AuthContext);
+
+    const firstName = user.name.split(' ')[0];
+
+    // Function to convert plain text to HTML
+    const convertToHTML = (text) => {
+        return { __html: text };
+    };
+
+    // Slice content and filter only paragraphs
+    const slicedContent = content.slice(0, 250).replace(/<(?!\/?p(?=>|\s.*>))\/?.*?>/g, '') + '...';
 
     return (
         <div className="post-card">
@@ -17,20 +27,18 @@ const PostCard = (props) => {
             <div className="post-content">
                 <div className="post-header">
                     <div className="post-info">
-                    <div className="top">
-                        <h3 className='post title'>{title.length > 40 ? `${title.slice(0, 40)}...` : title}</h3>
-                    {auth?._id === user._id && <Action id={_id} />}
+                        <div className="top">
+                            <h3 className='post title'>{title}</h3>
+                            {auth?._id === user._id && <Action id={_id} />}
                         </div>
                         <div className='horizontal'>
-                            <p className='post date'>{moment(createdOn).fromNow()}</p>
-                            <p className='post avatarContent'>By : {avatarContent}</p>
+                            <p className='post date'>{moment(createdOn).fromNow()} by {firstName}</p>
                         </div>
                     </div>
                 </div>
                 <div className="post-body">
-                    <p>
-                        <strong>{user.name}</strong>: {content.length > 50 ? `${content.slice(0, 50)}...` : content}
-                    </p>
+                    {/* Render the sliced content as plain text */}
+                    <p dangerouslySetInnerHTML={convertToHTML(slicedContent)} style={{ textAlign: 'left', fontSize: "13px" }} />
                     <Link to={`/api/blog/${_id}`} className="read-more-link">
                         Read more
                     </Link>

@@ -8,6 +8,8 @@ import Register from './Pages/Register'
 import CreatePost from './Pages/CreatePost'
 import UpdatePost from './Pages/UpdatePost'
 import BlogPage from './Pages/BlogPage'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 export const AuthContext = createContext()
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
   return (
     <AuthContext.Provider value={{ auth, setAuth, refresh, setRefresh }}>
     <BrowserRouter>
+  
     <Navbar/>
     <Container sx={{p:1, mt:15}}>
       <Routes>
@@ -28,6 +31,7 @@ function App() {
       </Routes>
       </Container>
     </BrowserRouter>
+        <ToastContainer />
     </AuthContext.Provider>
   )
 }

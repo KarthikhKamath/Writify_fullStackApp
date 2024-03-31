@@ -28,7 +28,7 @@ function Navbar() {
                 // Check if the user is not authenticated before making the fetch request
                 
                 if (auth===null) {
-                    const res = await fetch("https://mern-stack-blogger.onrender.com/api/user/auth", {
+                    const res = await fetch("https://vercel-backend-writify.vercel.app/api/user/auth", {
                         method: "GET",
                         headers: {
                             token: localStorage.getItem("token"),

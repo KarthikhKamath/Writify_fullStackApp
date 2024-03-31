@@ -6,16 +6,14 @@ import { useNavigate } from 'react-router-dom';
 
 function DisplayPost() {
     const [posts, setPosts] = useState([])
-    // const { auth } = useContext(AuthContext)
-    const navigator = useNavigate()
+    const [isLoading, setIsLoading] = useState(true);
     const { auth } = useContext(AuthContext)
-
+    const navigator = useNavigate()
 
     useEffect(() => {
-        
         const fetchData = async () => {
             try {
-                const res = await fetch("https://mern-stack-blogger.onrender.com/api/blog/", {
+                const res = await fetch("https://vercel-backend-writify.vercel.app/api/blog/", {
                     method: "GET",
                     headers: {
                         token: localStorage.getItem("token")
@@ -25,37 +23,48 @@ function DisplayPost() {
                 const data = await res.json();
 
                 if (res.ok) {
-                    // console.log("postpage", data);
                     setPosts(data);
                 } else {
                     console.log(data);
                 }
             } catch (error) {
                 console.error("Error fetching data:", error);
+            } finally {
+                setIsLoading(false); // Set loading to false once data is fetched
             }
         };
-        fetchData()
-        // console.log("calling");
-    }, []);
 
+        fetchData();
+    }, []);
 
     return (
         <Box
             sx={{
                 display: "flex",
                 flexDirection: "row",
-                flexWrap:"wrap",
-                justifyContent:"center",
+                flexWrap: "wrap",
+                justifyContent: "center",
                 margin: "auto",
                 gap: 3,
-                alignItems:"center",
+                width: "100%",
+                alignItems: "center",
             }}
         >
-            {posts.map(post => (
-                <Box key={post.title} sx={{ maxWidth: "550px", width: "100%" }}>
-                    <PostCard post={post} />
-                </Box>
-            ))}
+            {isLoading ? (
+                <div style={{ textAlign: 'center', width: '100%' }}>
+                    {/* Loading Spinner */}
+                    <div className="loading-spinner"></div>
+                    <p>Loading....</p>
+                </div>
+            ) : posts.length === 0 ? (
+                <p>No posts available</p>
+            ) : (
+                posts.map(post => (
+                    <Box key={post.title} sx={{ minWidth: "300px", width: "30%" }}>
+                        <PostCard post={post} />
+                    </Box>
+                ))
+            )}
         </Box>
     );
 }

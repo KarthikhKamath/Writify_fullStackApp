@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { IconButton } from '@mui/material';
+import SettingsIcon from '@mui/icons-material/Settings';
 import { useNavigate } from 'react-router-dom';
 
 export default function Action({id}) {
@@ -22,7 +22,7 @@ export default function Action({id}) {
 
     const handleDelete =async () => {
         console.log(id, 'Delete');
-        const res = await fetch("https://mern-stack-blogger.onrender.com/api/blog/delete/"+id,{
+        const res = await fetch("https://vercel-backend-writify.vercel.app/api/blog/delete/"+id,{
             method:"DELETE",
             headers:{
                 token:localStorage.getItem("token")
@@ -41,15 +41,16 @@ export default function Action({id}) {
 
     return (
         <div>
-            <IconButton
+            <SettingsIcon
                 id="basic-button"
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
+                style={{cursor:"pointer"}}
             >
                 <MenuIcon/>
-            </IconButton>
+            </SettingsIcon>
             <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}
